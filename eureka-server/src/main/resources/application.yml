@@ -1,0 +1,59 @@
+
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+spring:
+  application:
+    name: eurka-server
+
+#actuator监管
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+info:
+  contact:
+    name: 王艺楷
+    email: 1263928214@qq.com
+
+#---
+#server:
+#  port: 8760
+#eureka:
+#  instance:
+#    hostname: boy1
+#  client:
+#    registerWithEureka: false
+#    fetchRegistry: false
+#    serviceUrl:
+##      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+#      defaultZone: http://boy2:8761/eureka/
+#spring:
+#  profiles: boy1
+#
+#---
+#server:
+#  port: 8761
+#eureka:
+#  instance:
+#    hostname: boy2
+#  client:
+#    registerWithEureka: false
+#    fetchRegistry: false
+#    serviceUrl:
+#      defaultZone: http://boy1:8760/eureka/
+#spring:
+#  profiles: boy2

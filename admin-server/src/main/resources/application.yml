@@ -1,0 +1,27 @@
+#\u6574\u5408\u8FDBEureka
+spring:
+  application:
+    name: admin-server
+  cloud:
+    zookeeper:
+      connect-string: 127.0.0.1:2181
+      enabled: true
+server:
+  port: 8769
+#eureka:
+#  client:
+#    registry-fetch-interval-seconds: 5
+#    service-url:
+#          defaultZone: ${EUREKA_SERVICE_URL:http://localhost:8761}/eureka/
+#  instance:
+#    leaseRenewalIntervalInSeconds: 10
+#    health-check-url-path: /actuator/health
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS

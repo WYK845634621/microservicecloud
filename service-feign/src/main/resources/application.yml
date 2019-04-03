@@ -1,0 +1,22 @@
+#Feign\u9ED8\u8BA4\u96C6\u6210\u4E86Ribbon\uFF0C\u5E76\u548CEureka\u7ED3\u5408\uFF0C\u9ED8\u8BA4\u5B9E\u73B0\u4E86\u8D1F\u8F7D\u5747\u8861\u7684\u6548\u679C\u3002
+server:
+  port: 8765
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+spring:
+  application:
+    name: service-feign
+#  cloud:
+#    zookeeper:
+#      connect-string: 127.0.0.1:2181
+#      discovery:
+#        enabled: true
+
+#feign自带断路器,无视报错,springcloud版本问题
+feign:
+  hystrix:
+    enabled: true
+
+RoundRobinTimes: 5
